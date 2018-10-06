@@ -1,0 +1,11 @@
+from sklearn import tree
+features = [[140, 1], [130, 1], [150, 0], [170, 0]]     # input to the classifier
+labels = ["apple", "smooth", "orange", "bumpy"]        # 0 = apple, 1 = orange, output to the classifier
+clf = tree.DecisionTreeClassifier()               # classifier = box of rules, requires that you import tree on line 1
+clf = clf.fit(features, labels)                # learning algorithm creates the box of rules
+# in scikit, the learning algorithm is
+# included in the classifier object as the
+# fit(find patterns and data) function
+
+print(clf.predict([[120, 1]]))                 # input to the classifier is the features of our
+# new fruit
